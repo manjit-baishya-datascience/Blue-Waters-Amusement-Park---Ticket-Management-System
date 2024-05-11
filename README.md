@@ -1,4 +1,5 @@
 # **Blue Waters Amusement Park - Database Management System** 🎢🎡
+![Header](/assets/header.png)
 
 ## **Introduction**
 This project contains `SQL` scripts to create and manage a database for an amusement park. The database is designed to store information about rides, visitors, tickets, staff, facilities, maintenance records, ride reviews, ride assignments, ride entries, and visitor feedback.
