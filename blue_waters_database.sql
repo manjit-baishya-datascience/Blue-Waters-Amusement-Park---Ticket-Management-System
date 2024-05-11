@@ -128,3 +128,4 @@ CREATE TABLE IF NOT EXISTS RideAssignments (
   AssignmentType TEXT CHECK (AssignmentType IN ('Operation', 'Maintenance')) NOT NULL,
   AssignmentDate DATE NOT NULL,
   FOREIGN KEY (RideID)
+);
