@@ -1,0 +1,91 @@
+Table Rides {
+  RideID INTEGER [primary key]
+  Name TEXT [not null, unique]
+  Type TEXT [not null]
+  Capacity INTEGER [not null]
+  HeightRestriction DECIMAL(5, 2) [not null]
+  AgeRestriction DECIMAL(5, 2)
+  Priority TEXT [not null] 
+  Status TEXT [not null]
+  LastMaintenance INT [ref: > Maintenance.MaintenanceID]
+  Location TEXT
+  Description TEXT
+}
+
+Table Visitors {
+  VisitorID INTEGER [primary key]
+  FirstName TEXT [not null]
+  LastName TEXT [not null]
+  Age INTEGER [not null]
+  Gender TEXT [not null]
+  Email TEXT [unique, not null]
+  PhoneNumber TEXT
+  Address TEXT
+  City TEXT
+  State TEXT
+  Country TEXT
+  DateOfBirth DATE [not null]
+}
+
+Table Tickets {
+  TicketID INTEGER [primary key]
+  VisitorID INTEGER [not null, ref: > Visitors.VisitorID]
+  RideID INTEGER [not null, ref: > Rides.RideID]
+  PurchaseDate DATETIME [not null]
+  Price DECIMAL(10, 2) [not null]
+}
+
+Table Staff {
+  StaffID INTEGER [primary key]
+  FirstName TEXT [not null]
+  LastName TEXT [not null]
+  Position TEXT [not null]
+  Email TEXT [unique, not null]
+  PhoneNumber TEXT
+  DateOfBirth DATE [not null]
+  DateJoined DATE [not null]
+  Salary DECIMAL(10, 2) [not null]
+  Address TEXT
+  City TEXT
+  State TEXT
+  Country TEXT
+}
+
+Table Facilities {
+  FacilityID INTEGER [primary key]
+  Name TEXT [not null, unique]
+  Description TEXT
+  Location TEXT
+  Capacity INTEGER
+  Status TEXT [not null]
+  LastMaintenanceDate DATE
+}
+
+Table Maintenance {
+  MaintenanceID INTEGER [primary key]
+  ItemID INTEGER [not null] // RideID or FacilityID
+  RideID INTEGER [ref: > Rides.RideID]
+  FacilityID INTEGER [ref: > Facilities.FacilityID]
+  ItemType TEXT [not null]
+  Description TEXT
+  MaintenanceDate DATE [not null]
+  Cost DECIMAL(10, 2) [not null]
+
+}
+
+Table RideReviews {
+  ReviewID INTEGER [primary key]
+  RideID INTEGER [not null, ref: > Rides.RideID]
+  VisitorID INTEGER [not null, ref: > Visitors.VisitorID]
+  Rating INTEGER [not null]
+  Review TEXT
+  ReviewDate DATE [not null]
+}
+
+Table RideAssignments {
+  AssignmentID INTEGER [primary key]
+  RideID INTEGER [not null, ref: > Rides.RideID]
+  StaffID INTEGER [not null, ref: > Staff.StaffID]
+  AssignmentType TEXT [not null]
+  AssignmentDate DATE [not null]
+}
