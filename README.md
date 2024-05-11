@@ -16,8 +16,6 @@ This project contains `SQL` scripts to create and manage a database for an amuse
 6. `Maintenance`: Records of maintenance activities for both rides and facilities, including descriptions, dates, and costs.
 7. `RideReviews`: Ratings and reviews submitted by visitors for rides, along with the dates they were submitted.
 8. `RideAssignments`: Assignments of staff members to rides for operation and maintenance purposes, including assignment types and dates.
-9. `RideEntries`: Records of visitor entries and exits to rides, including entry and exit dates and times.
-10. `VisitorFeedback`: Feedback and complaints submitted by visitors, along with the types of feedback and dates they were submitted.
 
 ## **Schema Diagram**
 
