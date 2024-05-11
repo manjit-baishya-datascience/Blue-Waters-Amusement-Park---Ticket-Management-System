@@ -4,7 +4,7 @@
 This project contains `SQL` scripts to create and manage a database for an amusement park. The database is designed to store information about rides, visitors, tickets, staff, facilities, maintenance records, ride reviews, ride assignments, ride entries, and visitor feedback.
 
 ## **Schema Diagram**
-<!-- ![Schema Diagram](schema.svg) -->
+![Schema Diagram](/assets/schema.svg)
 
 ## **Tables** 🗃️
 1. `Rides`: Information about rides in the amusement park, including their names, types, capacity, restrictions, status, and descriptions.
